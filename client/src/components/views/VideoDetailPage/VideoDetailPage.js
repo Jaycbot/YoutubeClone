@@ -4,6 +4,7 @@ import Axios from 'axios';
 import SideVideo from './Sections/SideVideo';
 import Subscribe from './Sections/Subscribe';
 import Comment from './Sections/Comment';
+import LikeDislikes from './Sections/LikeDislikes'
 function VideoDetailPage(props) {
 	const videoId = props.match.params.videoId; //routing 할 때, :videoId로 주었기 때문에 params를 이용해서 가져올 수 있음.
 	const variable = {
@@ -51,7 +52,7 @@ function VideoDetailPage(props) {
 							controls
 						></video>
 
-						<List.Item actions={[subscribeButton]}>
+						<List.Item actions={[<LikeDislikes video userId={localStorage.getItem('userId')} videoId={videoId}/>,subscribeButton]}>
 							<List.Item.Meta
 								avatar={<Avatar src={VideoDetail.writer.image} />}
 								title={VideoDetail.writer.name}
