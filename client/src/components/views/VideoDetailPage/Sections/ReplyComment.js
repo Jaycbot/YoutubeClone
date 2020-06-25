@@ -12,7 +12,7 @@ function ReplyComment(props) {
 			}
 		});
 		setChildCommentNumber(commentNumber);
-	}, [props.commentLists]);
+	}, [props.commentLists, props.parentCommentId]);
 	let renderReplyComment = (parentCommentId) => {
 		return props.commentLists.map((comment, index) => (
 			<React.Fragment>
@@ -27,7 +27,7 @@ function ReplyComment(props) {
 						<ReplyComment
 							refreshFunction={props.refreshFunction}
 							postId={props.postId}
-							parentCommentId={comment.Id}
+							parentCommentId={comment._id}
 							commentLists={props.commentLists}
 						/>
 					</div>
