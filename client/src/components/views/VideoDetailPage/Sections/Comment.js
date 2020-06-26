@@ -45,7 +45,7 @@ function Comment(props) {
 								/>
 								<ReplyComment
 									refreshFunction={props.refreshFunction}
-									parentCommentId={comment.Id}
+									parentCommentId={comment._Id}
 									postId={props.postId}
 									commentLists={props.commentLists}
 								/>
